@@ -1,0 +1,9 @@
+% intersec(L1, L2, L3)
+
+intersec([], _, []).
+intersec([H|T], L2, [H|R]) :-
+    member(H, L2),
+    intersec(T, L2, R).
+intersec([H|T], L2, R) :-
+    \+ member(H, L2),
+    intersec(T, L2, R).
